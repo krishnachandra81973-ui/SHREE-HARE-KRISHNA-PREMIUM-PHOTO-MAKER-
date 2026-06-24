@@ -1,0 +1,24 @@
+{
+  "name": "MANGLAM PREMIUM PHOTO STUDIO",
+  "short_name": "Manglam Studio",
+  "description": "Professional passport photo creator with automatic background removal, border customization, and A4 print layout optimization.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

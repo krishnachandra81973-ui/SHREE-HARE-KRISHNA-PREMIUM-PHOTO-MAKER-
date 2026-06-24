@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background / Ring / Text Colors -->
+    <!-- Brand Pinkish Red: #e21a4f -->
+    
+    <!-- Copper Gradient for the Kalash -->
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c66843" />
+      <stop offset="25%" stop-color="#f39c7b" />
+      <stop offset="65%" stop-color="#a04924" />
+      <stop offset="100%" stop-color="#64240a" />
+    </linearGradient>
+
+    <!-- Lush Green Gradient for Mango Leaves -->
+    <linearGradient id="greenGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14532d" />
+      <stop offset="40%" stop-color="#16a34a" />
+      <stop offset="80%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#86efac" />
+    </linearGradient>
+
+    <!-- Brown Gradient for the Coconut -->
+    <linearGradient id="coconutGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12" />
+      <stop offset="40%" stop-color="#9a3412" />
+      <stop offset="100%" stop-color="#431407" />
+    </linearGradient>
+
+    <!-- Marigold Flower Gradients -->
+    <radialGradient id="marigoldGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </radialGradient>
+    <radialGradient id="orangeMarigoldGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffedd5" />
+      <stop offset="55%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </radialGradient>
+    
+    <!-- Subtle Shadow Filter -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- White Circular Disk Base -->
+  <circle cx="256" cy="256" r="248" fill="#ffffff" />
+
+  <!-- Outer Elegant Red Border Ring -->
+  <circle cx="256" cy="256" r="238" fill="none" stroke="#e21a4f" stroke-width="10" />
+
+  <!-- Inner Concentric Guide Ring -->
+  <circle cx="256" cy="256" r="226" fill="none" stroke="#e21a4f" stroke-width="2" opacity="0.6" />
+
+  <!-- TOP CURVED TEXT (MANGLAM) -->
+  <!-- A circular path arched over the top -->
+  <path id="topCurve" d="M 76 256 A 180 180 0 0 1 436 256" fill="none" />
+  <text font-family="'Inter', 'Arial Black', sans-serif" font-weight="900" font-size="56" fill="#e21a4f" text-anchor="middle" letter-spacing="4">
+    <textPath href="#topCurve" startOffset="50%">MANGLAM</textPath>
+  </text>
+
+  <!-- CENTER KALASH ASSEMBLY -->
+  <g filter="url(#softShadow)">
+    
+    <!-- Mango Leaves (Amra Pallav) spreading out -->
+    <!-- Far Left Leaf -->
+    <path d="M 220 286 C 170 260, 130 210, 140 180 C 155 210, 205 260, 220 286 Z" fill="url(#greenGrad)" stroke="#14532d" stroke-width="1.2" />
+    <!-- Far Right Leaf -->
+    <path d="M 292 286 C 342 260, 382 210, 372 180 C 357 210, 307 260, 292 286 Z" fill="url(#greenGrad)" stroke="#14532d" stroke-width="1.2" />
+    <!-- Left-Center Leaf -->
+    <path d="M 235 286 C 205 235, 185 170, 195 140 C 210 170, 230 235, 235 286 Z" fill="url(#greenGrad)" stroke="#14532d" stroke-width="1.2" />
+    <!-- Right-Center Leaf -->
+    <path d="M 277 286 C 307 235, 327 170, 317 140 C 302 170, 282 235, 277 286 Z" fill="url(#greenGrad)" stroke="#14532d" stroke-width="1.2" />
+    <!-- Center Leaf (Pointing straight up) -->
+    <path d="M 256 286 C 244 230, 244 150, 256 120 C 268 150, 268 230, 256 286 Z" fill="url(#greenGrad)" stroke="#14532d" stroke-width="1.5" />
+
+    <!-- Coconut (Nariyal) sitting on neck -->
+    <path d="M 224 280 C 220 230, 256 185, 256 185 C 256 185, 292 230, 288 280 Q 256 294 224 280 Z" fill="url(#coconutGrad)" stroke="#431407" stroke-width="2" />
+    <!-- Coconut Fiber Grooves -->
+    <path d="M 235 265 Q 256 205 256 185 Q 256 205 277 265" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.35" />
+    <path d="M 245 275 Q 256 215 256 185 Q 256 215 267 275" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.35" />
+
+    <!-- Top Marigold Dome sitting on the Coconut top -->
+    <circle cx="256" cy="180" r="16" fill="url(#orangeMarigoldGrad)" stroke="#ea580c" stroke-width="0.5" />
+    <circle cx="256" cy="180" r="11" fill="url(#marigoldGrad)" />
+    <circle cx="256" cy="180" r="6" fill="#f97316" />
+
+    <!-- Metal Kalash Pot -->
+    <!-- Base -->
+    <ellipse cx="256" cy="385" rx="55" ry="12" fill="#4a1505" opacity="0.4" />
+    <!-- Pot Body -->
+    <path d="M 218 310 C 160 330, 160 378, 218 395 H 294 C 352 378, 352 330, 294 310 Z" fill="url(#copperGrad)" stroke="#5a1e09" stroke-width="2" />
+    <!-- Flared Rim -->
+    <path d="M 220 310 H 292 L 298 296 H 214 Z" fill="url(#copperGrad)" stroke="#5a1e09" stroke-width="1.5" />
+    <!-- Rim lip shadow -->
+    <ellipse cx="256" cy="310" rx="36" ry="4" fill="none" stroke="#431407" stroke-width="2" opacity="0.6" />
+
+    <!-- Auspicious Swastika Symbol (Vibrant Crimson Red) -->
+    <path d="M 256 328 V 368 M 236 348 H 276 M 236 348 V 362 M 256 328 H 270 M 276 348 V 334 M 256 368 H 242" 
+          stroke="#e21a4f" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- Bed of Marigold Flowers around the Base -->
+    <g>
+      <!-- Orange 1 Left -->
+      <circle cx="168" cy="384" r="16" fill="url(#orangeMarigoldGrad)" stroke="#ea580c" stroke-width="0.5" />
+      <circle cx="168" cy="384" r="10" fill="url(#marigoldGrad)" />
+      <!-- Yellow 2 Left -->
+      <circle cx="194" cy="394" r="17" fill="url(#marigoldGrad)" stroke="#ca8a04" stroke-width="0.5" />
+      <circle cx="194" cy="394" r="11" fill="url(#orangeMarigoldGrad)" />
+      <!-- Orange 3 Left-Center -->
+      <circle cx="224" cy="402" r="18" fill="url(#orangeMarigoldGrad)" stroke="#ea580c" stroke-width="0.5" />
+      <circle cx="224" cy="402" r="12" fill="url(#marigoldGrad)" />
+      <!-- Yellow 4 Center (Main) -->
+      <circle cx="256" cy="406" r="19" fill="url(#marigoldGrad)" stroke="#ca8a04" stroke-width="0.5" />
+      <circle cx="256" cy="406" r="13" fill="url(#orangeMarigoldGrad)" />
+      <!-- Orange 5 Right-Center -->
+      <circle cx="288" cy="402" r="18" fill="url(#orangeMarigoldGrad)" stroke="#ea580c" stroke-width="0.5" />
+      <circle cx="288" cy="402" r="12" fill="url(#marigoldGrad)" />
+      <!-- Yellow 6 Right -->
+      <circle cx="318" cy="394" r="17" fill="url(#marigoldGrad)" stroke="#ca8a04" stroke-width="0.5" />
+      <circle cx="318" cy="394" r="11" fill="url(#orangeMarigoldGrad)" />
+      <!-- Orange 7 Far Right -->
+      <circle cx="344" cy="384" r="16" fill="url(#orangeMarigoldGrad)" stroke="#ea580c" stroke-width="0.5" />
+      <circle cx="344" cy="384" r="10" fill="url(#marigoldGrad)" />
+    </g>
+  </g>
+
+  <!-- BOTTOM RIBBON/BANNER FOR TAGLINE -->
+  <!-- Curving banner under the Kalash -->
+  <g filter="url(#softShadow)">
+    <!-- White banner background with red outline -->
+    <!-- Ribbon Left Fold -->
+    <path d="M 68 375 L 88 355 L 94 380 Z" fill="#b91c1c" stroke="#991b1b" stroke-width="1.5" />
+    <path d="M 44 385 L 68 375 L 68 405 L 40 400 Z" fill="#ffffff" stroke="#e21a4f" stroke-width="2.5" />
+    <!-- Ribbon Right Fold -->
+    <path d="M 444 375 L 424 355 L 418 380 Z" fill="#b91c1c" stroke="#991b1b" stroke-width="1.5" />
+    <path d="M 468 385 L 444 375 L 444 405 L 472 400 Z" fill="#ffffff" stroke="#e21a4f" stroke-width="2.5" />
+
+    <!-- Main Banner Body -->
+    <path d="M 64 380 Q 256 465 448 380 L 444 410 Q 256 495 68 410 Z" fill="#ffffff" stroke="#e21a4f" stroke-width="3" stroke-linejoin="round" />
+  </g>
+
+  <!-- Tagline Text along the same curve -->
+  <path id="bottomCurve" d="M 80 395 Q 256 480 432 395" fill="none" />
+  <text font-family="'Georgia', 'Times New Roman', serif" font-weight="900" font-size="20" fill="#000000" text-anchor="middle" letter-spacing="1">
+    <textPath href="#bottomCurve" startOffset="50%">BELIEVE IN BEST QUALITY</textPath>
+  </text>
+</svg>
