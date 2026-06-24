@@ -67,9 +67,31 @@ export default function App() {
   const [brushSize, setBrushSize] = useState(20);
   const [error, setError] = useState<string | null>(null);
   const [studioLogo, setStudioLogo] = useState<string | null>(() => localStorage.getItem('studioLogo') || null);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const logoInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      console.log('User accepted the install prompt');
+    }
+    setDeferredPrompt(null);
+  };
 
   const bokehElements = useMemo(() => {
     return Array.from({ length: 20 }).map((_, i) => ({
@@ -450,6 +472,15 @@ export default function App() {
             </div>
           <div className="flex flex-col items-end gap-3">
             <div className="flex gap-4">
+              {deferredPrompt && (
+                <button 
+                  onClick={handleInstallClick}
+                  className="group relative flex items-center gap-3 bg-sky-500/20 border border-sky-500/30 text-sky-400 hover:bg-sky-500/30 px-6 py-4 rounded-2xl font-sans font-medium uppercase tracking-widest text-xs hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+                >
+                  <Download size={16} className="text-sky-400 group-hover:scale-110 transition-transform duration-300" />
+                  Install App
+                </button>
+              )}
               <a 
                 href="/logo.svg" 
                 download="manglam_studio_logo.svg"
